@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="index-grid-container")
+    a(href="/")
+      div(class="index-grid-container__cell")
+        h1(class="index-grid-container__cell__title") View Menu
+        p(class="index-grid-container__cell__body") View menu items and add them to cart.
+    a(href="/")
+      div(class="index-grid-container__cell")
+        h1(class="index-grid-container__cell__title") View Cart
+        p(class="index-grid-container__cell__body") Remove items from cart and place order. 
+    a(href="/")
+      div(class="index-grid-container__cell")
+        h1(class="index-grid-container__cell__title") View Orders
+        p(class="index-grid-container__cell__body") View and bump placed orders.
+    a(href="/")
+      div(class="index-grid-container__cell")
+        h1(class="index-grid-container__cell__title") Update Menu
+        p(class="index-grid-container__cell__body") Add and remove menu items.
