@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const Schema = mongoose.Schema;
 
@@ -7,8 +8,9 @@ const OrderSchema = new Schema({
 }, {timestamps: true});
 
 // Virtual for time elapsed since order placed
-OrderSchema.virtual('TimeElapsed').get(() => {
-  return (new Date()).getTime() - this.createdAt.getTime();
+OrderSchema.virtual('TimeElapsed').get((value, virtual, doc) => {
+  const diff = (new Date()) - doc.createdAt;
+  return (moment.utc(diff).format('HH:mm:ss'));
 });
 
 // Virtual for total price
