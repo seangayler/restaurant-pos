@@ -1,8 +1,11 @@
 extends layout
 
+block extraHead
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
 block content
   div(class="index-grid-container")
-    a(href="/")
+    a(href="/menu")
       div(class="index-grid-container__cell")
         h1(class="index-grid-container__cell__title") View Menu
         p(class="index-grid-container__cell__body") View menu items and add them to cart.
@@ -17,4 +20,4 @@ block content
     a(href="/")
       div(class="index-grid-container__cell")
         h1(class="index-grid-container__cell__title") Update Menu
-        p(class="index-grid-container__cell__body") Add and remove menu items.
+        p(class="index-grid-container__cell__body") Add, edit and remove menu items.

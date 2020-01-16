@@ -1,0 +1,31 @@
+@import "variables.css";
+
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {text-decoration: none; color: var(--main-text-color)}
+a:visited {color: var(--main-text-color)}
+a:hover {color: var(--main-text-color)}
+a:active {color: var(--main-text-color)}
+
+/* ==========================================================================
+   Main header styles.
+   ========================================================================== */
+
+.brand-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+
+.brand-header__text {
+  color: var(--main-text-color);
+}

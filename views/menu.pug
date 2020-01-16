@@ -1,0 +1,14 @@
+extends layout
+
+block extraHead
+  link(rel='stylesheet', href='/stylesheets/menu.css')
+
+block content
+  ul(class="menu-list-container")
+    each item in menuItems
+      li(class="menu-list-container__item")
+        h2(class="menu-list-container__item__title")=item.name
+        p(class="menu-list-container__item__description")=item.description
+        p(class="menu-list-container__item__price")='$' + item.price
+        form(action="")
+          submit(class="menu-list-container__item__button") Add to order
