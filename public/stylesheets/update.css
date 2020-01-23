@@ -1,0 +1,103 @@
+@import "variables.css";
+
+/* ==========================================================================
+    Styles for list view of update page.
+    ========================================================================== */
+
+.update-create {
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid var(--main-text-color);
+  background-color: var(--main-bg-color);
+  border-radius: 5px;
+  font-weight: 800;
+  padding: 5px;
+}
+
+.update-list-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-list-container__item {
+  margin: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #000;
+}
+
+.update-list-container__item__title {
+  margin: 0;
+}
+
+.update-list-container__item__description {
+  margin: 0;
+}
+
+.update-list-container__item__price {
+  margin: 0;
+}
+
+.update-list-container__item__form__button {
+  border: 1px solid var(--main-text-color);
+  font-weight: 800;
+  border-radius: 5px;
+  background-color: var(--main-bg-color);
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+    Styles for create menu item form.
+    ========================================================================== */
+.update-create-form-background {
+  z-index: 20;
+  background-color: #000;
+  position: absolute;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.update-create-form {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30vh;
+  width: 400px;
+  left: 0;
+  right: 0;
+  z-index: 21;
+  display: flex;
+  flex-direction: column;
+  border: 6px solid var(--main-text-color);
+  border-radius: 5px;
+  background-color: var(--main-bg-color);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.update-create-form__exit {
+  width: 100px;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 2px solid var(--main-text-color);
+  background-color: #fff;
+
+}
+
+.update-create-form__name, .update-create-form__description, .update-create-form__price {
+  margin-bottom: 10px;
+  border: 2px solid var(--main-text-color);
+}
+
+.update-create-form__submit {
+  border: 2px solid var(--main-text-color);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 160px;
+  align-self: center;
+  background-color: #fff;
+}

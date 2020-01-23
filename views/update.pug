@@ -1,1 +1,26 @@
 extends layout
+
+block extraHead
+  link(rel="stylesheet", href="/stylesheets/update.css")
+
+block content
+  button(class="update-create") Create new item
+  
+  ul(class="update-list-container")
+    each item in menuItems
+      li(class="update-list-container__item")
+        p(class="update-list-container__item__title")
+          strong="Name: " 
+          span=item.name
+        p(class="update-list-container__item__description")
+          strong="Description: "
+          span=item.description
+        p(class="update-list-container__item__price")
+          strong="Price: $"
+          span=item.price
+        div(class="update-list-container__item__form")
+          form(action="/update/delete" method="post")
+            input(type="hidden" name="id" value=`${item._id}`)
+            button(type="submit" class="update-list-container__item__form__button") Delete
+
+  script(type="text/javascript" src="/javascripts/updateScript.js")

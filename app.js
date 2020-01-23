@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var menuRouter = require("./routes/menu");
+var updateRouter = require('./routes/update');
 
 var app = express();
 
@@ -21,11 +22,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routers
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
+app.use('/update', updateRouter);
 
-// Set up mongoose connection
-mongoose.connect(connectionString, { useNewUrlParser: true });
+// set up mongoose connection
+mongoose.connect(connectionString, { useNewUrlParser: true,  useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
@@ -42,7 +45,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {errorMessage: res.locals.message});
 });
 
 module.exports = app;
