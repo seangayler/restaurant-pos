@@ -53,7 +53,7 @@ function createCreateForm() {
   const buttonSubmit = document.createElement('input');
   buttonSubmit.classList.add('update-create-form__submit');
   buttonSubmit.setAttribute('type', 'submit');
-  buttonSubmit.textContent = 'Create menu item';
+  buttonSubmit.setAttribute('value', 'Create menu item');
   // hierarchy of html attributes
   form.appendChild(buttonExit);
   form.appendChild(inputName);

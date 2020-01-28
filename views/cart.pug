@@ -1,0 +1,22 @@
+extends layout
+
+block extraHead
+  link(rel="stylesheet", href="/stylesheets/cart.css")
+
+block content
+  ul(class="cart-list-container")
+    each item in cartItems
+      li(class="cart-list-container__item")
+        h2(class="cart-list-container__item__title")=item.name
+        p(class="cart-list-container__item__price")='$' + item.price
+        button(class="cart-list-container__item__button" id=`${item._id}`) Remove item
+
+  #user
+    if cartItems
+      form(action="/cart/create" method="POST" class="place-order-container")
+        p=`Total price: $${totalPrice}`
+        button(type="submit" class="place-order-container__button-submit") Place order
+    else
+      p(style="text-align: center; font-size: 1.75rem;") The cart is empty.
+
+  script(type="text/javascript" src="/javascripts/cartScript.js")

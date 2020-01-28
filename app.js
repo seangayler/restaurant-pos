@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var menuRouter = require("./routes/menu");
 var updateRouter = require('./routes/update');
+var cartRouter = require('./routes/cart');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
 app.use('/update', updateRouter);
+app.use('/cart', cartRouter);
 
 // set up mongoose connection
 mongoose.connect(connectionString, { useNewUrlParser: true,  useUnifiedTopology: true });

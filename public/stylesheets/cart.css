@@ -1,0 +1,82 @@
+@import "variables.css";
+
+/* ==========================================================================
+    Cart page styles.
+    ========================================================================== */
+
+
+.cart-list-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-list-container__item {
+  background-color: var(--main-bg-color);
+}
+
+.cart-list-container__item__title {
+  color: var(--main-text-color);
+  margin: 5px;
+  overflow-y: hidden;
+  font-size: 1.4em;
+  max-height: 1.6em;
+}
+
+.cart-list-container__item__button {
+  background-color: #fff;
+  border: 1px solid var(--main-text-color);
+  padding: 3px;
+  margin: 5px;
+}
+
+.cart-list-container__item__price {
+  color: var(--main-text-color);
+  font-weight: 800;
+  margin: 0 5px 0 5px;
+}
+
+.place-order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-order-container__button-submit {
+  background-color: var(--main-text-color);
+  color: #fff;
+  border: 1px solid var(--main-text-color);
+  padding: 7px;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+     Media queries for different breakpoints.
+     ========================================================================== */
+  
+    @media (max-width: 600px){
+      /* Cart page grid styles.
+       ========================================================================== */
+      .cart-list-container__item {
+        margin: 8px 0 8px 0;
+        border-top: 2px solid var(--main-text-color);
+        border-bottom: 2px solid var(--main-text-color);
+      }
+    }
+    @media (min-width: 601px) and (max-width: 1023px) {
+      /* Cart page grid styles.
+       ========================================================================== */
+      .cart-list-container__item {
+        border: 2px solid var(--main-text-color);
+        margin: 10px;
+       }
+    }
+    @media (min-width: 1024px) {
+      /* Cart page grid styles.
+       ========================================================================== */
+      .cart-list-container__item {
+        border: 2px solid var(--main-text-color);
+        margin: 12px;
+       }
+    }
+      
