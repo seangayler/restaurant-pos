@@ -11,12 +11,11 @@ block content
         p(class="cart-list-container__item__price")='$' + item.price
         button(class="cart-list-container__item__button" id=`${item._id}`) Remove item
 
-  #user
-    if cartItems
-      form(action="/cart/create" method="POST" class="place-order-container")
-        p=`Total price: $${totalPrice}`
-        button(type="submit" class="place-order-container__button-submit") Place order
-    else
-      p(style="text-align: center; font-size: 1.75rem;") The cart is empty.
+  if cartItems
+    form(action="/cart/create" method="POST" class="place-order-container")
+      p(id="totalPrice")=`Total price: $${totalPrice}`
+      button(type="submit" class="place-order-container__button-submit") Place order
+  else
+    p(style="text-align: center; font-size: 1.75rem;") The cart is empty.
 
   script(type="text/javascript" src="/javascripts/cartScript.js")

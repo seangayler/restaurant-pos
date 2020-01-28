@@ -36,6 +36,7 @@ exports.cart_list = function(req, res) {
     if (objectListDuplicates.length == 0) {
       objectListDuplicates = false;
     }
+    totalPrice = totalPrice.toFixed(2);
     res.render('cart', { cartItems: objectListDuplicates, totalPrice: totalPrice });
   });
 }
