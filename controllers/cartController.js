@@ -32,7 +32,7 @@ exports.cart_list = function(req, res) {
     objectListDuplicates.forEach(menuItem => {
       totalPrice += menuItem.price;
     });
-    // ssign false to objectListDuplicates if there are no menu items in the cart
+    // Assign false to objectListDuplicates if there are no menu items in the cart
     if (objectListDuplicates.length == 0) {
       objectListDuplicates = false;
     }
