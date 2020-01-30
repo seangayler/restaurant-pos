@@ -29,9 +29,7 @@ function removeCookie(button) {
   const numCookies = cookieList.length;
   const newCookieList = new Array();
   // Expire all the cookies
-  cookieList.forEach((cookie) => {
-    document.cookie = cookie + '; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
-  });
+  removeAllCookies(cookieList);
   if (cookieList.length == 1) {
     return;
   }
@@ -75,4 +73,10 @@ function clearScreen() {
   emptyMessage.setAttribute('Style', 'text-align: center; font-size: 1.75rem;');
   document.body.appendChild(emptyMessage);
 }
-  
+
+// Take cookieList as argument in form of cookies split by semicolon
+function removeAllCookies(cookieList) {
+  cookieList.forEach((cookie) => {
+    document.cookie = cookie + '; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
+  });
+}

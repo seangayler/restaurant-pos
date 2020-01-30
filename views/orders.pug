@@ -1,0 +1,23 @@
+extends layout
+
+block extraHead
+  link(rel="stylesheet", href="/stylesheets/orders.css")
+block content
+  ul(class="orders-container")
+    each order in orders
+      li
+        ul(class="order-container")    
+          li
+            ul
+              each orderItem in order.orderItems
+                li=`${orderItem.name}: $${orderItem.price}`
+          li=`Total: $${order.totalPrice}`
+          li(class="time")=`Time elapsed: ${order.timeElapsed}`
+          form(action="/orders/delete" method="post" class="order-form")
+            input(type="hidden" name="id" value=`${order._id}`)
+            button(type="submit" class="order-form__button-delete") Bump order
+
+  script(type="text/javascript" src="/javascripts/orderScript.js")
+  
+      
+    

@@ -1,0 +1,34 @@
+@import "variables.css";
+
+/* ==========================================================================
+    Styles for list view of orders page.
+    ========================================================================== */
+
+.orders-container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-container {
+  width: 400px;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--main-text-color);
+  list-style: none;
+  padding-left: 0;
+  margin: 10px;
+}
+
+.order-form {
+  display: flex;
+  justify-content: center;
+}
+
+.order-form__button-delete {
+  background-color: var(--main-text-color);
+  color: #fff;
+}
